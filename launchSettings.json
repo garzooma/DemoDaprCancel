@@ -1,0 +1,29 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "daprfrontend": "StartDebugging",
+        "mybackend": "StartDebugging",
+        "httpfrontend": "StartDebugging",
+        "daprfrontend-dapr": "StartWithoutDebugging",
+        "mybackend-dapr": "StartWithoutDebugging"
+      }
+    },
+    "Start HTTP": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "httpfrontend",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
+      "serviceActions": {
+        "daprfrontend": "StartDebugging",
+        "daprfrontend-dapr": "StartWithoutDebugging",
+        "httpfrontend": "StartDebugging",
+        "mybackend": "StartDebugging",
+        "mybackend-dapr": "StartWithoutDebugging"
+      }
+    }
+  }
+}
